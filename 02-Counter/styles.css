@@ -1,0 +1,245 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* primary dark shades */
+  --clr-primary-1: hsl(205, 57%, 23%);
+  --clr-primary-2: hsl(205, 57%, 33%);
+  --clr-primary-3: hsl(205, 57%, 43%);
+  --clr-primary-4: hsl(205, 57%, 53%);
+  /* primary light shades */
+  --clr-primary-5: hsl(205, 97%, 53%);
+  --clr-primary-6: hsl(205, 57%, 63%);
+  --clr-primary-7: hsl(205, 67%, 53%);
+  --clr-primary-8: hsl(205, 87%, 73%);
+  --clr-primary-9: hsl(205, 57%, 73%);
+  --clr-primary-10: hsl(205, 57%, 83%);
+  /* grey shades used for headings  */
+  --clr-grey-1: hsl(209, 16%, 34%);
+  --clr-grey-2: hsl(209, 16%, 44%);
+  --clr-grey-3: hsl(209, 16%, 34%);
+  --clr-grey-4: hsl(209, 16%, 34%);
+  /* grey used for paragraphs  */
+  --clr-grey-5: hsl(209, 16%, 54%);
+  --clr-grey-6: hsl(209, 16%, 64%);
+  --clr-grey-7: hsl(215, 26%, 54%);
+  --clr-grey-8: hsl(210, 26%, 54%);
+  --clr-grey-9: hsl(205, 26%, 64%);
+  --clr-grey-10: hsl(212, 36%, 94%);
+  --clr-white: #fff;
+  --clr-black:#222;
+  --clr-red-dark: hsl(360, 85%, 46%);
+  --clr-red-light: hsl(360, 45%, 56%);
+  --clr-green-dark: hsl(125, 45%, 23%);
+  --clr-greem-light: hsl(125, 56%, 46%);
+  --spacing: 0.1;
+  --radius: 0.25;
+  --transition: all 0.3s linear;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --dark-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  --light-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  --fixed-width: 620px;
+  --max-width: 1170px;
+}
+
+/*
+==============
+Global Styles
+==============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-1);
+  background: var(--clr-grey-10);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-1);
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  color: var(--clr-grey-5);
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  h1,
+  h2, 
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/*
+================
+Global Classes
+================
+*/
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 920px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/*
+==============
+Counter 
+=============
+*/
+
+nav {
+  height: 3rem;
+  background: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  display: grid;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  letter-spacing: var(--spacing);
+  place-items: center;
+}
+
+.nav-center h4 {
+  color: var(--clr-primary-5);
+  font-size: 1rem;
+  margin:  1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-1);
+}
+
+nav a:hover {
+  color: var(--clr-primary-9);
+}
+
+main {
+  min-height: calc(100vh - 3rem);
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+#value {
+  font-size: 6rem;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+  transition: var(--transition);
+  letter-spacing: var(--spacing);
+  border: 2px solid var(--clr-black);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.55rem;
+  background: crimson;
+  color: var(--clr-white);
+  cursor: pointer;
+  box-shadow: var(--light-shadow);
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.btn:hover {
+  color: crimson;
+  background: transparent;
+}
+
+
